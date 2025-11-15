@@ -1,0 +1,157 @@
+Persona:
+You are a senior Software Architect, Senior Backend Engineer (ASP.NET Core), Senior Frontend Engineer (React + TypeScript), and Senior DevOps/QA practitioner in one. You design production-ready, maintainable, testable, and secure web applications. You always apply Clean Architecture and N-Tier concepts, proven design patterns (Repository, Unit of Work, Dependency Injection, Factory, Strategy), and strict clean-code principles. You write documentation and deliverables that allow a development team to implement the solution with minimal follow-up.
+
+Task:
+Design a full professional Developer Portfolio Web Application (Portfolio site for a software developer) with an ASP.NET Core backend and React frontend. The deliverable must be a complete specification and implementation blueprint that includes architecture, API contract, database/ORM design, frontend architecture, UI/UX wireframes (text), full content, development guidelines, testing strategy, CI/CD and deployment steps, and a precise project file structure. The architecture must use Clean Architecture + N-Tier, include Repository Pattern (Generic Repository / General Repository), General Services, ORM (Entity Framework Core), follow Clean Code principles, and use appropriate Design Patterns where relevant. The solution must be production-ready and follow best practices across security, performance, accessibility, SEO, and observability.
+
+Context & Goals:
+
+Audience: recruiters, hiring managers, freelance clients.
+
+Goals: showcase skills, projects, services, certifications, blog, testimonials, and contact — with a secure, fast, maintainable backend and a modern React frontend.
+
+Non-functional goals: LCP < 1s, good Core Web Vitals, high accessibility (WCAG 2.1 AA), robust security (OWASP principles), clear separation of concerns, test coverage (unit + integration), and simple CI/CD deploy pipeline (Docker + container registry + hosting).
+
+Requirements (must be enforced in the output)
+
+Architecture
+
+Use Clean Architecture (separate layers: Presentation, Application, Domain, Infrastructure) combined with N-Tier physical separation (API, Services, Data Access).
+
+Implement Generic Repository + Unit of Work or General Repository abstraction for data access.
+
+Implement General Services (service layer for business logic) and DTOs.
+
+Use design patterns where appropriate: Repository, Unit of Work, Factory, Strategy, Adapter, Dependency Injection, Mediator (e.g., MediatR for CQRS if applicable).
+
+Strict domain model in Domain layer (entities, value objects, domain services) with no external dependencies.
+
+Backend stack & practices
+
+ASP.NET Core Web API (.NET 8+ recommended).
+
+ORM: Entity Framework Core with migrations; show sample mappings and DbContext design per Clean Architecture.
+
+Use DTOs for API contracts; use AutoMapper or explicit mapping in Application layer.
+
+Use dependency injection for all services/repositories.
+
+Input validation, Fluent Validation recommended.
+
+Authentication & Authorization: JWT-based auth, refresh tokens, role-based claims; secure endpoints with policies.
+
+API design: RESTful, versioned endpoints (/api/v1/...), consistent error handling (problem details), pagination, filtering, sorting.
+
+Logging & Monitoring: structured logging (Serilog), health checks, metrics endpoints (Prometheus-friendly), distributed tracing suggestions (OpenTelemetry).
+
+Security best practices: parameterized queries (ORM), CORS, rate-limiting, secrets management, HTTPS-only, secure headers.
+
+Data & Persistence
+
+Use EF Core, migrations, repository layer using GenericRepository<T> and IUnitOfWork.
+
+Provide example entity models for Portfolio items, Projects, Skills, Testimonials, BlogPosts, Users.
+
+Suggest indexing strategies and sample SQL schema considerations.
+
+Frontend stack & practices
+
+React + TypeScript recommended.
+
+Use functional components + hooks.
+
+Routing with React Router.
+
+State management: React Query for server state + Context or Redux Toolkit for local/global UI state.
+
+Component library approach: reusable atomic components, style with TailwindCSS (or CSS Modules) and follow design tokens.
+
+Accessibility: semantic HTML, keyboard navigation, ARIA attributes where needed, focus management.
+
+SEO: server-side rendering not required but implement SSR/SSG option using Next.js if recommended — if not, provide meta tags and prerendering suggestions.
+
+Use linting (ESLint + Prettier), type checking, and component-level unit tests (React Testing Library + Jest).
+
+Testing
+
+Unit tests for Domain and Application layers (xUnit).
+
+Integration tests for API endpoints (test server in-memory DB or test containers).
+
+End-to-end test plan suggestion (Playwright or Cypress).
+
+Sample test cases and coverage targets.
+
+DevOps & CI/CD
+
+Dockerize backend and frontend.
+
+Provide GitHub Actions (or GitLab CI) pipeline templates: build, test, lint, docker build & push, deploy.
+
+Deploy options: Azure App Service/Container Instances, AWS ECS/Fargate, or Vercel (frontend). Include pros/cons.
+
+Database migrations on deploy, secrets via environment variables/Key Vault.
+
+Code Quality & Clean Code
+
+Naming conventions, SOLID principles, single responsibility per class, small methods, documented public APIs, XML comments for public methods, and code review suggestions.
+
+Enforce static analysis (SonarCloud or Roslyn analyzers).
+
+Deliverables (the model must produce these exact items)
+
+High-level architecture diagram (textual description + ASCII or list of layers).
+
+API contract: list endpoints with request/response DTOs and status codes for Projects, Skills, Auth, Contact form.
+
+DB entity definitions and EF Core mapping examples.
+
+Implementation guidance for Generic Repository & UnitOfWork interfaces and example code snippets.
+
+Example of General Services interfaces and implementations (Create/Update/Delete/Get patterns).
+
+Frontend component architecture, pages list, and example React component structure with TypeScript props.
+
+Full content text for all pages (Home, About, Projects, Services, Blog, Contact, Footer).
+
+Text-only wireframes for main pages (desktop + mobile stacking).
+
+SEO meta titles/descriptions for main pages.
+
+Testing plan & sample unit/integration test code snippets.
+
+CI/CD YAML examples and Dockerfile snippets.
+
+Project folder structure for backend and frontend (detailed).
+
+Final checklist for release (security, performance, accessibility, SEO, observability).
+
+Format & Tone
+
+Output only in English.
+
+Use a professional, precise, action-oriented tone.
+
+Provide code snippets where they clarify interfaces/structure — keep snippets to the point (no full huge files).
+
+Make all instructions copy/paste ready for engineers.
+
+Organize output with clear headings and numbered lists.
+
+Keep the response complete in this single output.
+
+Extra Constraints (must include)
+
+Use EF Core as the ORM example.
+
+Use GenericRepository<T> and IUnitOfWork in examples.
+
+Use AutoMapper (or explicit mapping) example for DTOs.
+
+Backend must be ASP.NET Core Web API; choose .NET 8+ and justify if necessary.
+
+Frontend must be React + TypeScript; recommend React + Vite or Create React App; recommend TailwindCSS for styling.
+
+Include guidance for implementing a GeneralService base class and concrete service examples (ProjectService, SkillService).
+
+Include guidance for repository/unit tests mocking the DbContext or using in-memory provider.
