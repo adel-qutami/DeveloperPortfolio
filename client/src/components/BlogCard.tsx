@@ -24,7 +24,7 @@ export function BlogCard({
 }: BlogCardProps) {
   return (
     <Link href={`/blog/${id}`}>
-      <a>
+      <span className="block cursor-pointer">
         <Card className="overflow-hidden hover-elevate transition-all group h-full" data-testid={`card-blog-${id}`}>
           <div className="relative aspect-video overflow-hidden bg-muted">
             <img
@@ -57,7 +57,7 @@ export function BlogCard({
             </div>
           </CardFooter>
         </Card>
-      </a>
+      </span>
     </Link>
   );
 }

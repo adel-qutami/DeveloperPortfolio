@@ -22,16 +22,16 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16">
           <Link href="/">
-            <a className="text-xl font-bold hover-elevate active-elevate-2 px-2 py-1 rounded-md" data-testid="link-home">
+            <span className="text-xl font-bold hover-elevate active-elevate-2 px-2 py-1 rounded-md cursor-pointer" data-testid="link-home">
               <span className="font-mono">AM</span>
-            </a>
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
             {navigation.map((item) => (
               <Link key={item.name} href={item.href}>
-                <a
-                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover-elevate active-elevate-2 ${
+                <span
+                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover-elevate active-elevate-2 cursor-pointer ${
                     location === item.href
                       ? "bg-accent text-accent-foreground"
                       : "text-foreground/80"
@@ -39,7 +39,7 @@ export function Header() {
                   data-testid={`link-${item.name.toLowerCase()}`}
                 >
                   {item.name}
-                </a>
+                </span>
               </Link>
             ))}
           </nav>
@@ -65,8 +65,8 @@ export function Header() {
           <nav className="flex flex-col p-4 gap-2">
             {navigation.map((item) => (
               <Link key={item.name} href={item.href}>
-                <a
-                  className={`px-4 py-3 text-sm font-medium rounded-md transition-colors hover-elevate active-elevate-2 ${
+                <span
+                  className={`px-4 py-3 text-sm font-medium rounded-md transition-colors hover-elevate active-elevate-2 cursor-pointer block ${
                     location === item.href
                       ? "bg-accent text-accent-foreground"
                       : "text-foreground/80"
@@ -75,7 +75,7 @@ export function Header() {
                   data-testid={`link-mobile-${item.name.toLowerCase()}`}
                 >
                   {item.name}
-                </a>
+                </span>
               </Link>
             ))}
           </nav>

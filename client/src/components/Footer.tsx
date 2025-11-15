@@ -21,9 +21,9 @@ export function Footer() {
             <nav className="flex flex-col gap-2">
               {["About", "Projects", "Services", "Blog"].map((item) => (
                 <Link key={item} href={`/${item.toLowerCase()}`}>
-                  <a className="text-sm text-muted-foreground hover:text-foreground transition-colors" data-testid={`link-footer-${item.toLowerCase()}`}>
+                  <span className="block text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer" data-testid={`link-footer-${item.toLowerCase()}`}>
                     {item}
-                  </a>
+                  </span>
                 </Link>
               ))}
             </nav>

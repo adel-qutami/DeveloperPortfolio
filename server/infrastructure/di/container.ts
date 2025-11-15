@@ -1,0 +1,33 @@
+import "reflect-metadata";
+import { container } from "tsyringe";
+import { PrismaService } from "../database/prisma.service";
+import { ProjectRepository } from "../repositories/ProjectRepository";
+import { BlogPostRepository } from "../repositories/BlogPostRepository";
+import { SkillRepository } from "../repositories/SkillRepository";
+import { TestimonialRepository } from "../repositories/TestimonialRepository";
+import { ContactSubmissionRepository } from "../repositories/ContactSubmissionRepository";
+import { UserRepository } from "../repositories/UserRepository";
+import { UnitOfWork } from "../repositories/UnitOfWork";
+import { ProjectService } from "../../application/services/ProjectService";
+import { BlogPostService } from "../../application/services/BlogPostService";
+import { SkillService } from "../../application/services/SkillService";
+import { TestimonialService } from "../../application/services/TestimonialService";
+import { ContactSubmissionService } from "../../application/services/ContactSubmissionService";
+import { AuthService } from "../../application/services/AuthService";
+
+container.registerSingleton(PrismaService);
+container.registerSingleton(ProjectRepository);
+container.registerSingleton(BlogPostRepository);
+container.registerSingleton(SkillRepository);
+container.registerSingleton(TestimonialRepository);
+container.registerSingleton(ContactSubmissionRepository);
+container.registerSingleton(UserRepository);
+container.registerSingleton(UnitOfWork);
+container.registerSingleton(ProjectService);
+container.registerSingleton(BlogPostService);
+container.registerSingleton(SkillService);
+container.registerSingleton(TestimonialService);
+container.registerSingleton(ContactSubmissionService);
+container.registerSingleton(AuthService);
+
+export { container };
